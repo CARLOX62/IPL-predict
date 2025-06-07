@@ -1,9 +1,11 @@
-```markdown
 # 🏏 IPL Victory Predictor
 
-An interactive and visually stunning web application built using **Streamlit** to predict the winning probability of IPL teams during a match in real time. It uses a trained ML model (pipeline) and historical data to provide accurate predictions based on match progress.
+An interactive and visually appealing web application built with **Streamlit** to predict the winning probability of IPL teams during a match in real-time. Powered by a machine learning model trained on historical IPL data.
 
-![IPL Banner](Ipl-2021-ix7zwgff29ylomuf.jpg)
+![Ipl-2021-ix7zwgff29ylomuf](https://github.com/user-attachments/assets/b964cace-11e7-451f-b825-fc4025751194)
+
+
+---
 
 ## 🚀 Live Demo
 
@@ -14,94 +16,101 @@ An interactive and visually stunning web application built using **Streamlit** t
 
 ## 📸 Screenshot
 
-![Screenshot (51)](https://github.com/user-attachments/assets/0c3505c0-78f3-438d-a113-801bdbaa5617)
+![Screenshot (51)](https://github.com/user-attachments/assets/a2717dab-513d-4d1f-bee7-26002e66a2cb)
 
 
 ---
 
 ## 🔧 Features
 
-- Select **Batting** and **Bowling** teams from official IPL lineups.
-- Choose match **venue**, enter **target**, **score**, **overs completed**, and **wickets down**.
-- Instant prediction of **win probability** using a machine learning model.
-- Visually appealing interface with dynamic background based on IPL visuals.
-- Error-handling for invalid inputs and missing files.
+✅ Select **Batting Team** and **Bowling Team**  
+✅ Choose the **Venue**  
+✅ Input live match data: **Target**, **Score**, **Overs**, **Wickets**  
+✅ Predict win probability with a trained machine learning model  
+✅ Beautiful IPL-themed background and intuitive interface  
+✅ Handles edge cases and invalid inputs gracefully
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-├── Predictor.ipynb                    # Jupyter Notebook for model training/testing
-├── main.py                            # Streamlit web app
-├── pipe.pkl                           # Trained pipeline (ML model)
-├── deliveries.csv                     # Raw IPL delivery-level data
-├── final_df.csv                       # Processed feature dataset
-├── matches.csv                        # IPL match-level data
-├── Ipl-2021-ix7zwgff29ylomuf.jpg      # Background IPL image
-├── Screenshot (52).png                # UI Screenshot
+├── main.py                          # Streamlit app script
+├── pipe.pkl                         # Trained ML pipeline (model)
+├── Predictor.ipynb                  # Jupyter Notebook for training/preprocessing
+├── deliveries.csv                   # Ball-by-ball delivery dataset
+├── matches.csv                      # IPL match metadata
+├── final_df.csv                     # Cleaned dataset used for training
+├── Ipl-2021-ix7zwgff29ylomuf.jpg    # IPL background image
+├── Screenshot (52).png              # UI screenshot
 ```
 
 ---
 
 ## 🧠 How It Works
 
-- **User Input:** Match context (teams, score, overs, etc.)
-- **Feature Engineering:** Calculates:
-  - `runs_left = target - score`
-  - `balls_left = 120 - (overs * 6)`
-  - `crr = score / overs`
-  - `rrr = runs_left / (balls_left / 6)`
-- **Model Inference:** A trained pipeline (`pipe.pkl`) predicts win probability.
-- **Output:** Displays probability for both teams visually.
+1. **User Inputs** match conditions
+2. **Features Computed**:
+    - `runs_left = target - score`
+    - `balls_left = 120 - (overs × 6)`
+    - `wickets_remaining = 10 - wickets`
+    - `crr = score / overs`
+    - `rrr = runs_left / (balls_left / 6)`
+3. These features are passed to a **trained machine learning model**
+4. The model returns win probabilities for both teams
 
 ---
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/CARLOX62/IPL-predict.git
-cd IPL-predict
+git clone https://github.com/your-username/ipl-victory-predictor.git
+cd ipl-victory-predictor
 pip install -r requirements.txt
 streamlit run main.py
 ```
 
-> Ensure `pipe.pkl`, image, and all CSV files are in the same directory as `main.py`.
+> Ensure all files (CSV, model, images) are in the same directory before running the app.
 
 ---
 
-## 📊 Model & Dataset
+## 📊 Model Details
 
-- Model trained on IPL match data using classifiers (like Logistic Regression).
-- Important Features:
-  - Team info, venue, match status
-  - Engineered stats (runs_left, crr, rrr, etc.)
-- Datasets:
-  - `deliveries.csv` – Ball-level details
-  - `matches.csv` – Match metadata
-  - `final_df.csv` – Processed features
+- **Input Features**:
+  - Batting Team, Bowling Team, City
+  - Runs Left, Balls Left, Wickets Remaining
+  - Current Run Rate (CRR), Required Run Rate (RRR), Target Score
+
+- **Model Type**: Logistic Regression (can be replaced with other classifiers)
+- **Training Done In**: `Predictor.ipynb`
 
 ---
 
-## 🌐 Tech Stack
+## 💻 Tech Stack
 
-- **Python**
-- **Pandas**, **NumPy**, **scikit-learn**
-- **Streamlit** for the web interface
+- Python
+- Pandas, scikit-learn
+- Streamlit (Frontend & Backend UI)
+- Jupyter Notebook (for training/EDA)
 
 ---
 
 ## 🙌 Acknowledgments
 
-Thanks to Streamlit, IPL open dataset providers, and ML communities that inspired this app.
+- [Kaggle IPL Datasets](https://www.kaggle.com/datasets)
+- Streamlit team for making ML app deployment so easy
 
 ---
 
 ## 📬 Contact
 
-Raise an [issue](https://github.com/CARLOX62/IPL-predict/issues) or connect via GitHub for improvements or questions.
+For questions, suggestions, or collaboration:
+- GitHub: [@your-username](https://github.com/your-username)
 
 ---
 
-⭐️ *If you like this project, give it a star!*
-```
+## ⭐️ Support
+
+If you like this project, give it a ⭐️ on GitHub!
+
+---
