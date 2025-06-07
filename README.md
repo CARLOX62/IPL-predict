@@ -105,7 +105,7 @@ streamlit run main.py
 ## 📬 Contact
 
 For questions, suggestions, or collaboration:
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: (https://github.com/CARLOX62)
 
 ---
 
